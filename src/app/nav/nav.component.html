@@ -1,0 +1,64 @@
+<div *ngIf="!isUserLoggedIn">
+  <nz-header class="main-header" nz-row nzType="flex" style="background-color: #730068;">
+    <div>
+      <a style="color: white; margin-left:50px; font-size: 18px;font-weight: bolder;" routerLink="/login">WELCOME TO JOB
+        PORTAL</a>
+    </div>
+    <div class="nav-links">
+      <a nz-button nzType="link" routerLink="/register">SIGN UP</a>
+      <a nz-button nzType="link" routerLink="/login">LOGIN</a>
+    </div>
+  </nz-header>
+
+
+  <nz-sider nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0" class="mobile-sidenav">
+    <ul class="nav-links" nz-menu nzTheme="dark" nzMode="inline">
+      <li nz-menu-item>
+        <a nz-button nzType="link" routerLink="/register">SIGN UP</a>
+      </li>
+      <li nz-menu-item>
+        <a nz-button nzType="link" routerLink="/login">LOGIN</a>
+      </li>
+    </ul>
+  </nz-sider>
+</div>
+<div *ngIf="isUserLoggedIn">
+  <nz-header class="main-header" nz-row nzType="flex" style="background-color: #600073;">
+    <div>
+      <a style="color: white; margin-left:50px; font-size: 18px;font-weight: bolder;" routerLink="/user/all-jobs">JOB
+        PORTAL</a>
+    </div>
+    <div class="nav-links">
+      <a nz-button nzType="link" routerLink="/user/dashboard" routerLinkActive="active">Dashboard</a>
+      <a nz-button nzType="link" routerLink="/user/all-jobs" routerLinkActive="active">Jobs</a>
+      <a nz-button nzType="link" routerLink="/user/search-job" routerLinkActive="active">Search</a>
+      <a nz-button nzType="link" routerLink="/user/user-profile" routerLinkActive="active">Profile</a>
+      <a nz-button nzType="link" routerLink="/user/setting" routerLinkActive="active">Setting</a>
+      <a nz-button nzType="link" (click)="logout()" routerLinkActive="active">Logout</a>
+    </div>
+  </nz-header>
+
+  <nz-sider nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0" class="mobile-sidenav">
+    <ul class="nav-links" nz-menu nzTheme="dark" nzMode="inline">
+      <li nz-menu-item>
+        <a nz-button nzType="link" routerLink="/user/dashboard" routerLinkActive="active">Dashboard</a>
+      </li>
+      <li nz-menu-item>
+        <a nz-button nzType="link" routerLink="/user/all-jobs" routerLinkActive="active">Jobs</a>
+      </li>
+      <li nz-menu-item>
+        <a nz-button nzType="link" routerLink="/user/search-job" routerLinkActive="active">Search</a>
+      </li>
+      <li nz-menu-item>
+        <a nz-button nzType="link" routerLink="/user/user-profile" routerLinkActive="active">Profile</a>
+      </li>
+      <li nz-menu-item>
+        <a nz-button nzType="link" routerLink="/user/setting" routerLinkActive="active">Setting</a>
+      </li>
+      <li nz-menu-item>
+        <a nz-button nzType="link" (click)="logout()" routerLinkActive="active">Logout</a>
+      </li>
+    </ul>
+  </nz-sider>
+</div>
+  

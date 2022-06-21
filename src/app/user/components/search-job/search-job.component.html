@@ -1,0 +1,108 @@
+<form [formGroup]="validateForm" (ngSubmit)="submitt(validateForm.value)">
+    <nz-select nzMode="multiple" nzPlaceHolder="Search job by category" formControlName="validateForm">
+        <nz-option nzLabel="Accounting" nzValue="Accounting"></nz-option>
+        <nz-option nzLabel="Account Management" nzValue="Account Management"></nz-option>
+        <nz-option nzLabel="Administration and Office" nzValue="Administration and Office"></nz-option>
+        <nz-option nzLabel="Animal Care" nzValue="Animal Care"></nz-option>
+        <nz-option nzLabel="Business Operations" nzValue="Business Operations"></nz-option>
+        <nz-option nzLabel="Computer and IT" nzValue="Computer and IT"></nz-option>
+        <nz-option nzLabel="Corporate" nzValue="Corporate"></nz-option>
+        <nz-option nzLabel="Data and Analytics" nzValue="Data and Analytics"></nz-option>
+        <nz-option nzLabel="Design" nzValue="Design"></nz-option>
+        <nz-option nzLabel="Editor" nzValue="Editor"></nz-option>
+        <nz-option nzLabel="Energy Generation and Mining" nzValue="Energy Generation and Mining"></nz-option>
+        <nz-option nzLabel="Farming and Outdoors" nzValue="Farming and Outdoors"></nz-option>
+        <nz-option nzLabel="Healthcare" nzValue="Healthcare"></nz-option>
+        <nz-option nzLabel="Human Resources and Recruitment" nzValue="Human Resources and Recruitment"></nz-option>
+        <nz-option nzLabel="IT" nzValue="IT"></nz-option>
+        <nz-option nzLabel="Legal Services" nzValue="Legal Services"></nz-option>
+        <nz-option nzLabel="Manufacturing and Warehouse" nzValue="Manufacturing and Warehouse"></nz-option>
+        <nz-option nzLabel="Mechanic" nzValue="Mechanic"></nz-option>
+        <nz-option nzLabel="Mental Health" nzValue="Mental Health"></nz-option>
+        <nz-option nzLabel="Office Administration" nzValue="Office Administration"></nz-option>
+        <nz-option nzLabel="Physical Assistant" nzValue="Physical Assistant"></nz-option>
+        <nz-option nzLabel="Product Management" nzValue="Product Management"></nz-option>
+        <nz-option nzLabel="Protective Services" nzValue="Protective Services"></nz-option>
+        <nz-option nzLabel="Real Estate" nzValue="Real Estate"></nz-option>
+        <nz-option nzLabel="Science and Engineering" nzValue="Science and Engineering"></nz-option>
+        <nz-option nzLabel="Software Engineer" nzValue="Software Engineer"></nz-option>
+        <nz-option nzLabel="Sports, Fitness, and Recreation" nzValue="Sports, Fitness, and Recreation"></nz-option>
+        <nz-option nzLabel="Unknown" nzValue="Unknown"></nz-option>
+        <nz-option nzLabel="Videography" nzValue="Videography"></nz-option>
+        <nz-option nzLabel="Writing and Editing" nzValue="Writing and Editing"></nz-option>
+        <nz-option nzLabel="Accounting and Finance" nzValue="Accounting and Finance"></nz-option>
+        <nz-option nzLabel="Account Management/Customer Success" nzValue="Account Management/Customer Success">
+        </nz-option>
+        <nz-option nzLabel="Advertising and Marketing" nzValue="Advertising and Marketing"></nz-option>
+        <nz-option nzLabel="Arts" nzValue="Arts"></nz-option>
+        <nz-option nzLabel="Cleaning and Facilities" nzValue="Cleaning and Facilities"></nz-option>
+        <nz-option nzLabel="Construction" nzValue="Construction"></nz-option>
+        <nz-option nzLabel="Customer Service" nzValue="Customer Service"></nz-option>
+        <nz-option nzLabel="Data Science" nzValue="Data Science"></nz-option>
+        <nz-option nzLabel="Design and UX" nzValue="Design and UX"></nz-option>
+        <nz-option nzLabel="Education" nzValue="Education"></nz-option>
+        <nz-option nzLabel="Entertainment and Travel Services" nzValue="Entertainment and Travel Services"></nz-option>
+        <nz-option nzLabel="Food and Hospitality Services" nzValue="Food and Hospitality Services"></nz-option>
+        <nz-option nzLabel="HR" nzValue="HR"></nz-option>
+        <nz-option nzLabel="Installation, Maintenance, and Repairs" nzValue="Installation, Maintenance, and Repairs">
+        </nz-option>
+        <nz-option nzLabel="Law" nzValue="Law"></nz-option>
+        <nz-option nzLabel="Management" nzValue="Management"></nz-option>
+        <nz-option nzLabel="Marketing" nzValue="Marketing"></nz-option>
+        <nz-option nzLabel="Media, PR, and Communications" nzValue="Media, PR, and Communications"></nz-option>
+        <nz-option nzLabel="Nurses" nzValue="Nurses"></nz-option>
+        <nz-option nzLabel="Personal Care and Services" nzValue="Personal Care and Services"></nz-option>
+        <nz-option nzLabel="Product" nzValue="Product"></nz-option>
+        <nz-option nzLabel="Project Management" nzValue="Project Management"></nz-option>
+        <nz-option nzLabel="Public Relations" nzValue="Public Relations"></nz-option>
+        <nz-option nzLabel="Recruiting" nzValue="Recruiting"></nz-option>
+        <nz-option nzLabel="Sales" nzValue="Sales"></nz-option>
+        <nz-option nzLabel="Social Services" nzValue="Social Services"></nz-option>
+        <nz-option nzLabel="Software Engineering" nzValue="Software Engineering"></nz-option>
+        <nz-option nzLabel="Transportation and Logistics" nzValue="Transportation and Logistics"></nz-option>
+        <nz-option nzLabel="UX" nzValue="UX"></nz-option>
+        <nz-option nzLabel="Writer" nzValue="Writer"></nz-option>
+    </nz-select>
+    <button style="background-color: #003973;width: 100px; margin-left: 30px;" nz-button
+        nzType="primary">Search</button>
+</form>
+
+
+<nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Searching...">
+    <nz-table #basicTable [nzData]="jobs" [nzPageSize]="20" [nzShowPagination]="'false'">
+        <thead>
+            <tr>
+                <th style="font-weight: bolder;">Action</th>
+                <th style="font-weight: bolder;" nzWidth="100px">ID</th>
+                <th style="font-weight: bolder;" nzWidth="300px">JOB NAME</th>
+                <th style="font-weight: bolder;">PUBLISH DATE</th>
+                <th style="font-weight: bolder;">TYPE</th>
+                <th style="font-weight: bolder;" nzWidth="120px">MODEL TYPE</th>
+                <th style="font-weight: bolder;" nzWidth="100px">LEVEL</th>
+                <th style="font-weight: bolder;" nzWidth="120px">COMPANY ID</th>
+                <th style="font-weight: bolder;">COMPANY</th>
+                <th style="font-weight: bolder;">COMPOANY LOCATION</th>
+                <th style="font-weight: bolder;">CATEGORY</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let job of basicTable.data">
+                <td><button nz-button [nzSize]="size" (click)="addToFavourite(job.id)" nzType="default">Favourite</button></td>
+                <td>{{job.id}}</td>
+                <td style="font-weight:600 ;">{{job.name}}</td>
+                <td>{{job.publication_date}}</td>
+                <td>{{job.type}}</td>
+                <td>{{job.model_type}}</td>
+                <td *ngFor="let level of job.levels">{{level.name}}</td>
+                <td *ngFor="let tag of job.tags">{{tag.landing_page}}</td>
+                <td>{{job.company.id}}</td>
+                <td style="font-weight:600 ;" scope="row">{{job.company.name}}</td>
+                <td *ngFor="let location of job.locations">{{location.name}}</td>
+                <td style="font-weight:600 ;" *ngFor="let categorie of job.categories">{{categorie.name}}</td>
+            </tr>
+        </tbody>
+    </nz-table>
+    <br>
+    <nz-pagination style="margin-left: 560px;" [nzPageIndex]="currentPage" [nzTotal]="totalPages"
+        (nzPageIndexChange)="onPageIndexChange($event)"></nz-pagination>
+</nz-spin>

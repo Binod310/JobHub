@@ -1,0 +1,43 @@
+<div class="loginmain">
+    <nz-card style=" width:550px;height: 370px; background: #ffffff;
+    box-shadow: 
+      0px 2px 10px rgba(0,0,0,0.2), 
+      0px 10px 20px rgba(0,0,0,0.3), 
+      0px 30px 60px 1px rgba(0,0,0,0.5);border-radius: 25px;">
+        <form nz-form [formGroup]="validateForm" [formGroup]="validateForm">
+            <nz-form-item>
+                <h1>Change Password</h1>
+            </nz-form-item>
+
+            <nz-form-item>
+                <nz-form-label [nzSpan]="6" nzFor="password">Old password</nz-form-label>
+                <nz-form-control nzHasFeedback [nzSpan]="15" nzErrorTip="This Input Is Required!">
+                    <input nz-input type="password" formControlName="oldPassword" />
+                </nz-form-control>
+            </nz-form-item>
+
+            <nz-form-item>
+                <nz-form-label [nzSpan]="6" nzFor="password">New password</nz-form-label>
+                <nz-form-control nzHasFeedback [nzSpan]="15" nzErrorTip="This Input Is Required!">
+                    <input nz-input type="password" formControlName="newPassword" />
+                </nz-form-control>
+            </nz-form-item>
+
+            <nz-form-item>
+                <nz-form-label [nzSpan]="6" nzFor="password">Confirm password</nz-form-label>
+                <nz-form-control nzHasFeedback [nzSpan]="15" nzErrorTip="This Input Is Required!">
+                    <input nz-input type="password" formControlName="checkPassword" />
+                </nz-form-control>
+            </nz-form-item>
+
+            <nz-form-item>
+                <nz-form-control [nzSpan]="6">
+                    <button style="background-color: #003973;" nz-button [nzSize]="size" nzType="primary"
+                        (click)="submitt(validateForm.value)">Change</button>
+                </nz-form-control>
+            </nz-form-item>
+
+        </form>
+
+    </nz-card>
+</div>

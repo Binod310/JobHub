@@ -1,0 +1,38 @@
+<nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Fetching...">
+  <nz-table #basicTable style="margin-top:30px ;" [nzPageSize]="20" [nzData]="jobs" [nzShowPagination]="'false'">
+    <thead>
+      <tr>
+        <th style="font-weight: bolder;">Action</th>
+        <th style="font-weight: bolder;" nzWidth="100px">ID</th>
+        <th style="font-weight: bolder;" nzWidth="300px">JOB NAME</th>
+        <th style="font-weight: bolder;">PUBLISH DATE</th>
+        <th style="font-weight: bolder;">TYPE</th>
+        <th style="font-weight: bolder;" nzWidth="120px">MODEL TYPE</th>
+        <th style="font-weight: bolder;" nzWidth="100px">LEVEL</th>
+        <th style="font-weight: bolder;" nzWidth="130px">COMPANY-ID</th>
+        <th style="font-weight: bolder;">COMPANY</th>
+        <th style="font-weight: bolder;">COMPOANY LOCATION</th>
+        <th style="font-weight: bolder;">CATEGORY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let job of basicTable.data">
+       <td><button nz-button [nzSize]="size" (click)="addToFavourite(job.id)" nzType="default" style="color:blue;">Favourite</button></td>
+        <td>{{job.id}}</td>
+        <td style="font-weight:600 ;">{{job.name}}</td>
+        <td>{{job.publication_date}}</td>
+        <td>{{job.type}}</td>
+        <td>{{job.model_type}}</td>
+        <td *ngFor="let level of job.levels">{{level.name}}</td>
+        <td *ngFor="let tag of job.tags">{{tag.landing_page}}</td>
+        <td>{{job.company.id}}</td>
+        <td style="font-weight:600 ;" scope="row">{{job.company.name}}</td>
+        <td *ngFor="let location of job.locations">{{location.name}}</td>
+        <td style="font-weight:600 ;" *ngFor="let categorie of job.categories">{{categorie.name}}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+  <br>
+  <nz-pagination style="margin-left: 560px;" [nzPageIndex]="currentPage" [nzTotal]="totalPages"
+    (nzPageIndexChange)="onPageIndexChange($event)"></nz-pagination>
+</nz-spin>

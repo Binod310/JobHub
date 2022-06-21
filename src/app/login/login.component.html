@@ -1,0 +1,40 @@
+<div class="bg" style="background-color: #F8F8F8;">
+  <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Loging In....">
+    <div class="parent">
+      <div class="child" style="box-shadow: 
+      0px 2px 10px rgba(0,0,0,0.2), 
+      0px 10px 20px rgba(0,0,0,0.3), 
+      0px 30px 60px 1px rgba(0,0,0,0.5);border-radius: 75px;">
+        <div nz-row class="imgDiv">
+          <div nz-col nzSpan="24"><img width="100px" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.WRwcG_nGZtGmPpatDlcWPQHaE8%26pid%3DApi&f=1" /></div>
+        </div>
+        <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+
+          <nz-form-item>
+            <nz-form-label [nzSpan]="6" nzFor="email">E-mail</nz-form-label>
+            <nz-form-control [nzSpan]="15">
+              <input nz-input type="email" formControlName="userName">
+            </nz-form-control>
+          </nz-form-item>
+
+          <nz-form-item>
+            <nz-form-label [nzSpan]="6" nzFor="password">Password</nz-form-label>
+            <nz-form-control [nzSpan]="15">
+              <input nz-input type="password" formControlName="password">
+            </nz-form-control>
+          </nz-form-item>
+
+          <nz-form-item>
+            <nz-form-label [nzSpan]="6"></nz-form-label>
+            <nz-form-control [nzSpan]="15">
+              <button style="background-color: #003973;" nz-button [nzSize]="size" nzType="primary"
+                (click)="submitForm()">Login</button>
+
+              <button style="margin-left: 10px;" nz-button [nzSize]="size" nzType="default" routerLink="/register">Register</button>
+              </nz-form-control>
+          </nz-form-item>
+        </form>
+      </div>
+    </div>
+  </nz-spin>
+</div>
